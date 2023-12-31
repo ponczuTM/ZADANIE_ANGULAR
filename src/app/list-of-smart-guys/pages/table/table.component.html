@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row bg-crismon-light text-white py-2 fw-bold">
+        <div class="col-2">
+            Id  
+        </div>
+        <div class="col-3">
+            First name
+        </div>
+        <div class="col-3">
+            Last name
+        </div>
+        <div class="col-3">
+            E&ndash;mail
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <app-table-row *ngFor="let person of people; let i = index" [person]="person" [backgroundColorWhite]="i % 2 === 0"
+    (rowRemovedEvent)="removePerson($event)" (rowEditEvent)="passPersonToEditEvent.emit($event)"></app-table-row>
+</div>

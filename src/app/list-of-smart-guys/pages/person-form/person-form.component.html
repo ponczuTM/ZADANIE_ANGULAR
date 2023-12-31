@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <h4 class="modal-title" *ngIf="person === null">Add new brainiac</h4>
+    <h4 class="modal-title" *ngIf="person !== null">Edit brainiac</h4>
+    <button type="button" class="btn-close" (click)="modal.dismiss()"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" (ngSubmit)="save()" (keyup.enter)="save()">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 form-group">
+                    <label for="firstName" class="my-1">
+                        First name
+                        <span class="text-danger">&nbsp;*</span>
+                    </label>
+                    <input type="text" class="w-100 form-control mx-0" id="firstName" formControlName="firstName" placeholder="Type in the first name"/>
+                    <p class="text-danger" 
+                    [innerHtml]="(firstNameControl.errors?.['required'] && firstNameControl.touched) ?
+                    'This field is required' : ''">
+                    </p>
+                </div>
+
+                <div class="col-6 form-group">
+                    <label for="lastName" class="my-1">
+                        Last name
+                        <span class="text-danger">&nbsp;*</span>
+                    </label>
+                    <input type="text" class="w-100 form-control mx-0" id="lastName" formControlName="lastName" placeholder="Type in the last name"/>
+                    <p class="text-danger" 
+                    [innerHtml]="(lastNameControl.errors?.['required'] && lastNameControl.touched) ?
+                    'This field is required' : ''">
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label for="email" class="my-1">
+                        E&ndash;mail
+                        <span class="text-danger">&nbsp;*</span>
+                    </label>
+                    <input type="email" class="w-100 form-control mx-0" id="email" formControlName="email" placeholder="Type in the email"/>
+                    <p class="text-danger" 
+                    [innerHtml]="(emailControl.errors?.['required'] && emailControl.touched) ?
+                    'This field is required' : ''">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <div class="ms-auto">
+        <button type="button" class="btn btn-crismon-light btn-outline-dark me-2" (click)="modal.dismiss()">Close</button>
+        <button type="button" class="btn btn-crismon" (click)="save()">Save</button>
+    </div>

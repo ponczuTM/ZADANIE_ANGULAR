@@ -1,0 +1,32 @@
+<div class="row py-2 d-flex align-items-center"
+[ngClass]="{ 'bg-white': backgroundColorWhite, 'bg-light': !backgroundColorWhite}">
+    <div class="col-2 d-flex align-items-center justify-content-between">
+        <div>
+            {{ person?.id }}
+        </div>
+        <div>
+            <img src="{{person?.avatar}}" alt="{{person?.first_name}}" class="img-fluid">
+        </div>
+    </div>
+    <div class="col-3">
+        {{ person?.first_name }}
+    </div>
+    <div class="col-3">
+        {{ person?.last_name }}
+    </div>
+    <div class="col-3">
+        {{ person?.email }}
+    </div>
+    <div class="col-1 d-flex align-items-center justify-content-between">
+        <div>
+            <button class="btn" (click)="rowEditEvent.emit(person?.id)">
+                <fa-icon [icon]="editIcon" size="lg"></fa-icon>
+            </button>
+        </div>
+        <div>
+            <button class="btn" (click)="askForDeletion()">
+                <fa-icon [icon]="deleteIcon" size="lg"></fa-icon>
+            </button>
+        </div>
+    </div>
+</div>

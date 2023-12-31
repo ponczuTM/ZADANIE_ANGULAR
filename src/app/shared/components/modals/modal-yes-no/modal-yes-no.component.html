@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h4 class="modal-title">Question</h4>
+    <button type="button" class="btn-close" (click)="dismiss()"></button>
+</div>
+<div class="modal-body">
+    {{ question }}
+</div>
+<div class="modal-footer">
+    <div class="w-100 d-flex align-items-center justify-content-center">
+        <button type="button" class="btn btn-success d-block w-25 me-2" (click)="confirm()">Yes</button>
+        <button type="button" class="btn btn-danger d-block w-25" (click)="dismiss()">No</button>
+    </div>
+</div>

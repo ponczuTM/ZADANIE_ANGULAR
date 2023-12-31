@@ -1,0 +1,32 @@
+<nav class="bg-crismon navbar navbar-expand-lg">
+    <div class="container d-flex align-items-center text-white">
+        <div class="me-auto d-flex align-items-center">
+            <div>
+                <img src="assets/imgs/logo.png" class="img-fluid" alt="Brainiacs logo">
+            </div>
+            <div class="navbar-title ms-3 display-3">
+                Brainiacs
+            </div>
+        </div>
+
+        <button class="navbar-toggler" type="button" aria-controls="navbarContent" 
+        [attr.aria-expanded]="!menuCollapsed"
+         (click)="menuCollapsed = !menuCollapsed">
+            <fa-icon [icon]="burgerIcon" class="text-white" size="lg"></fa-icon>
+		</button>
+
+        <div class="navbar-collapse" [class.collapse]="menuCollapsed" id="navbarContent">
+			<ul class="navbar-nav ms-auto text-end h3">
+				<li class="nav-item" ngbDropdown>
+					<a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>				
+				</li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/list-of-smart-guys']" routerLinkActive="active">List of smart guys</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Help</a>
+                </li>
+			</ul>
+		</div>
+    </div>
+</nav>

@@ -1,0 +1,64 @@
+@import 'bootstrap/scss/bootstrap';
+
+// VARIABLES //
+$gray-color: #AAA;
+$white-color: #FFF;
+$crismon-color: #44001A;
+$crismon-light-color: #B15B5B;
+
+// STYLES // 
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.navbar {
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $white-color;
+        cursor: pointer;
+    }
+
+    .nav-link {
+        color: $gray-color;
+    }
+
+    .navbar-title {
+        font-family: 'Architects Daughter', cursive;
+        font-weight: 400;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: $white-color;
+    }
+}
+
+.bg-crismon {
+    background-color: $crismon-color;
+}
+
+.bg-crismon-light {
+    background-color: $crismon-light-color;
+}
+
+.btn-crismon:hover, .btn-crismon-light:hover, .btn-crismon:active, .btn-crismon-light:active{
+    background-color: $gray-color;
+    opacity: 0.8;
+}
+
+.btn-crismon {
+    background-color: $crismon-color;
+}
+
+.btn-crismon-light {
+    background-color: $crismon-light-color;
+}
+
+.btn-crismon, .btn-crismon-light {
+    border: none;
+    color: $white-color;
+}
